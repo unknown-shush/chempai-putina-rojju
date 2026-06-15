@@ -441,6 +441,9 @@
             pointer-events: none;
             opacity: 0; transition: opacity 2s ease;
         }
+        #photo-gallery.active {
+            pointer-events: auto;
+        }
 
         .polaroid {
             position: absolute;
@@ -537,15 +540,20 @@
                 position: fixed !important; bottom: 12px !important;
                 top: auto !important; left: 0 !important; right: 0 !important;
                 height: 175px !important;
-                display: flex !important; flex-direction: row !important;
+                display: none !important; /* Hide completely by default on mobile so it doesn't block clicks */
+                flex-direction: row !important;
                 overflow-x: auto !important; overflow-y: hidden !important;
                 padding: 12px 18px !important; gap: 18px !important;
-                z-index: 95 !important; pointer-events: auto !important;
+                z-index: 95 !important; pointer-events: none !important; /* Disable clicks by default */
                 background: rgba(20,0,35,0.55);
                 backdrop-filter: blur(12px);
                 border-top: 1px solid rgba(255,255,255,0.12);
                 box-shadow: 0 -15px 35px rgba(255,126,179,0.12);
                 touch-action: pan-x !important;
+            }
+            #photo-gallery.active {
+                display: flex !important; /* Show when active */
+                pointer-events: auto !important; /* Enable clicks when active */
             }
             .polaroid {
                 position: relative !important;
@@ -1361,7 +1369,9 @@
         // Gallery
         initGallery();
         setTimeout(() => {
-            document.getElementById('photo-gallery').style.opacity = '1';
+            const gal = document.getElementById('photo-gallery');
+            gal.classList.add('active');
+            gal.style.opacity = '1';
             polaroids.forEach((el, i) => {
                 setTimeout(() => { el.style.opacity = '1'; }, i * 380);
             });
