@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Senpai 🌸</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@200;300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pink: #ff7eb3;
+            --peach: #ffb199;
+            --purple: #c29ffd;
+            --blue: #8de9ff;
+            --yellow: #fff176;
+            --dark: #2a0a2e;
+            --glass: rgba(255,255,255,0.12);
+            --glass-border: rgba(255,255,255,0.35);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+            background: #0d0015;
+            touch-action: none;
+        }
+
+        /* ═══════════════════════════════════════════
+           AURORA MESH GRADIENT BACKGROUND
+        ═══════════════════════════════════════════ */
+        .aurora-bg {
+            position: fixed; inset: 0; z-index: 0;
+            background: radial-gradient(ellipse at 20% 20%, #2d0050 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 80%, #001d3d 0%, transparent 60%),
+                        radial-gradient(ellipse at 50% 50%, #0d001a 0%, #000 100%);
+        }
+
+        .aurora-blob {
+            position: absolute; border-radius: 50%;
+            filter: blur(80px);
+            animation: auroraFloat 20s infinite alternate ease-in-out;
+            will-change: transform;
+        }
+        .ab1 { width: 70vw; height: 70vw; top: -15%; left: -15%; background: radial-gradient(circle, rgba(255,126,179,0.55) 0%, transparent 70%); animation-duration: 18s; }
+        .ab2 { width: 60vw; height: 60vw; bottom: -20%; right: -10%; background: radial-gradient(circle, rgba(141,233,255,0.45) 0%, transparent 70%); animation-duration: 22s; animation-delay: -6s; }
+        .ab3 { width: 55vw; height: 55vw; top: 20%; left: 25%; background: radial-gradient(circle, rgba(194,159,253,0.5) 0%, transparent 70%); animation-duration: 26s; animation-delay: -12s; }
+        .ab4 { width: 45vw; height: 45vw; bottom: 15%; left: -5%; background: radial-gradient(circle, rgba(255,177,153,0.4) 0%, transparent 70%); animation-duration: 30s; animation-delay: -4s; }
+        .ab5 { width: 35vw; height: 35vw; top: 5%; right: 10%; background: radial-gradient(circle, rgba(255,241,118,0.25) 0%, transparent 70%); animation-duration: 15s; animation-delay: -9s; }
+
+        @keyframes auroraFloat {
+            0%   { transform: translate(0,0) scale(1); }
+            33%  { transform: translate(6vw, 8vh) scale(1.12); }
+            66%  { transform: translate(-4vw, -6vh) scale(0.92); }
+            100% { transform: translate(3vw, 10vh) scale(1.05); }
+        }
+
+        /* ═══════════════════════════════════════════
+           STARS LAYER
+        ═══════════════════════════════════════════ */
+        .stars-layer {
+            position: fixed; inset: 0; z-index: 1; pointer-events: none;
+        }
+        .star {
+            position: absolute; border-radius: 50%; background: white;
+            animation: twinkle var(--dur, 3s) infinite alternate ease-in-out;
+            opacity: var(--op, 0.6);
+        }
+        @keyframes twinkle { 0% { opacity: 0.1; transform: scale(0.6); } 100% { opacity: 1; transform: scale(1.2); } }
+
+        /* ═══════════════════════════════════════════
+           FLOATING NEON BALLOONS
+        ═══════════════════════════════════════════ */
+        .neon-balloon {
+            position: absolute; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: floatBalloon var(--dur, 18s) infinite ease-in-out alternate;
+            z-index: 2; pointer-events: none;
+        }
+        .neon-balloon::after {
+            content:''; position:absolute; top:98%; left:50%;
+            transform:translateX(-50%); width:2px; height:90px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+        }
+        .bal1 { width:90px; height:110px; bottom:-130px; left:12%; background: rgba(255,126,179,0.3); border: 1.5px solid rgba(255,126,179,0.8); box-shadow: 0 0 25px rgba(255,126,179,0.5), inset 0 0 20px rgba(255,255,255,0.2); --dur:17s; }
+        .bal2 { width:70px; height:88px; bottom:-110px; right:18%; background: rgba(141,233,255,0.25); border: 1.5px solid rgba(141,233,255,0.7); box-shadow: 0 0 25px rgba(141,233,255,0.4), inset 0 0 15px rgba(255,255,255,0.2); --dur:22s; animation-delay:-5s; }
+        .bal3 { width:100px; height:125px; bottom:-155px; left:62%; background: rgba(194,159,253,0.3); border: 1.5px solid rgba(194,159,253,0.8); box-shadow: 0 0 30px rgba(194,159,253,0.5), inset 0 0 20px rgba(255,255,255,0.2); --dur:25s; animation-delay:-10s; }
+        @keyframes floatBalloon {
+            0%   { transform: translateY(0) rotate(-5deg); }
+            50%  { transform: translateY(-65vh) rotate(4deg); }
+            100% { transform: translateY(-125vh) rotate(-3deg); }
+        }
+
+        /* ═══════════════════════════════════════════
+           SLIDES SYSTEM
+        ═══════════════════════════════════════════ */
+        .slide {
+            position: fixed; inset: 0; z-index: 10;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 1.5rem;
+            opacity: 0; pointer-events: none;
+            transform: translateY(50px) scale(0.95);
+            transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+        }
+        .slide.active { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+
+        /* ═══════════════════════════════════════════
+           GLASSMORPHISM CARD
+        ═══════════════════════════════════════════ */
+        .glass-card {
+            position: relative;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(32px) saturate(180%) brightness(1.1);
+            -webkit-backdrop-filter: blur(32px) saturate(180%) brightness(1.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 28px;
+            padding: 2.5rem 2.2rem;
+            width: 100%; max-width: 26rem;
+            box-shadow:
+                0 0 0 1px rgba(255,126,179,0.08),
+                0 30px 60px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.3),
+                inset 0 -1px 0 rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Animated neon border glow */
+        .glass-card::before {
+            content: '';
+            position: absolute; inset: -2px;
+            border-radius: 30px;
+            background: conic-gradient(from var(--angle, 0deg), var(--pink), var(--purple), var(--blue), var(--peach), var(--pink));
+            z-index: -1;
+            opacity: 0.7;
+            filter: blur(3px);
+            animation: rotateBorder 6s linear infinite;
+        }
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+        @keyframes rotateBorder { to { --angle: 360deg; } }
+
+        /* Glass inner shine sweep */
+        .glass-card::after {
+            content: '';
+            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.12), transparent);
+            transform: skewX(-20deg);
+            animation: cardSweep 7s 1.5s infinite;
+            pointer-events: none;
+        }
+        @keyframes cardSweep { 0% { left:-100%; } 20% { left:200%; } 100% { left:200%; } }
+
+        /* ═══════════════════════════════════════════
+           NEUMORPHISM INPUTS
+        ═══════════════════════════════════════════ */
+        .neo-input {
+            width: 100%;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 1rem 1.4rem;
+            border-radius: 16px;
+            outline: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem; font-style: italic;
+            text-align: center;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow:
+                inset 3px 3px 8px rgba(0,0,0,0.3),
+                inset -2px -2px 6px rgba(255,255,255,0.05);
+        }
+        .neo-input::placeholder { color: rgba(255,255,255,0.35); font-style: italic; }
+        .neo-input:focus {
+            border-color: var(--pink);
+            box-shadow: 0 0 0 3px rgba(255,126,179,0.2), 0 0 30px rgba(255,126,179,0.25), inset 2px 2px 6px rgba(0,0,0,0.25);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ═══════════════════════════════════════════
+           NEON BUTTONS
+        ═══════════════════════════════════════════ */
+        .neo-btn {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #ff5fa3 0%, #d966ff 100%);
+            border: none; color: #fff;
+            padding: 1rem 2rem; border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800; font-size: 0.85rem;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255,95,163,0.5), 0 8px 25px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+            transition: all 0.35s ease;
+        }
+        .neo-btn::before {
+            content:''; position:absolute; inset:0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            opacity:0; transition: opacity 0.3s;
+        }
+        .neo-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 40px rgba(255,95,163,0.7), 0 0 80px rgba(194,159,253,0.3), 0 12px 35px rgba(0,0,0,0.4); }
+        .neo-btn:hover::before { opacity:1; }
+        .neo-btn:active { transform: translateY(-1px) scale(0.99); }
+
+        .neo-btn-outline {
+            background: rgba(255,255,255,0.08);
+            border: 1.5px solid rgba(194,159,253,0.6);
+            color: var(--purple);
+            box-shadow: 0 0 15px rgba(194,159,253,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        .neo-btn-outline:hover {
+            background: linear-gradient(135deg, rgba(194,159,253,0.2), rgba(141,233,255,0.2));
+            border-color: var(--blue);
+            color: #fff;
+            box-shadow: 0 0 30px rgba(194,159,253,0.5);
+        }
+
+        /* ═══════════════════════════════════════════
+           TEXT GLOWS
+        ═══════════════════════════════════════════ */
+        h1, h2 { color: #fff; }
+        .glow-pink { text-shadow: 0 0 20px rgba(255,126,179,0.9), 0 0 40px rgba(255,126,179,0.5), 0 0 80px rgba(255,126,179,0.2); color: #ffb6d9; }
+        .glow-purple { text-shadow: 0 0 20px rgba(194,159,253,0.9), 0 0 40px rgba(194,159,253,0.5); color: #d9b8ff; }
+        .glow-blue { text-shadow: 0 0 20px rgba(141,233,255,0.9); color: #a8f0ff; }
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .font-serif  { font-family: 'Playfair Display', serif; }
+
+        @keyframes shake {
+            0%,100% { transform: translateX(0); }
+            20%,60%  { transform: translateX(-8px); }
+            40%,80%  { transform: translateX(8px); }
+        }
+        .error-shake { animation: shake 0.4s ease-in-out; border-color: #ff3366 !important; box-shadow: 0 0 25px rgba(255,51,102,0.5) !important; }
+
+        /* ═══════════════════════════════════════════
+           HINT BOX
+        ═══════════════════════════════════════════ */
+        #hint-box {
+            display: none; margin-top: 1rem;
+            border-radius: 16px; overflow: hidden;
+            border: 2px solid rgba(255,126,179,0.5);
+            box-shadow: 0 0 20px rgba(255,126,179,0.3);
+            width: 130px; margin-left: auto; margin-right: auto;
+            transform: scale(0.85) translateY(-10px);
+            opacity: 0;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+        #hint-box.shown { transform: scale(1) translateY(0); opacity: 1; }
+
+        /* ═══════════════════════════════════════════
+           CAKE SCENE
+        ═══════════════════════════════════════════ */
+        .cake-container {
+            position: relative; width: 220px; height: 240px;
+            margin: 0 auto 1.5rem;
+            filter: drop-shadow(0 0 30px rgba(255,126,179,0.4));
+        }
+        .cake-half {
+            position: absolute; top: 0; left: 0; width: 220px; height: 220px;
+            transition: transform 1s cubic-bezier(0.34,1.56,0.64,1), opacity 0.8s ease;
+            z-index: 5;
+        }
+        .cake-left  { clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); transform-origin: center left; }
+        .cake-right { clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); transform-origin: center right; }
+
+        .cake-cut .cake-left  { transform: translate(-90px, 35px) rotate(-35deg); opacity: 0; }
+        .cake-cut .cake-right { transform: translate(90px, 35px) rotate(35deg); opacity: 0; }
+
+        .candle-flame { animation: flicker 0.15s infinite alternate; transform-origin: bottom center; }
+        @keyframes flicker {
+            0%   { transform: scaleY(0.88) scaleX(1.06); filter: drop-shadow(0 0 6px #ffeb3b) drop-shadow(0 0 14px #ff9800); }
+            100% { transform: scaleY(1.12) scaleX(0.94); filter: drop-shadow(0 0 10px #ffeb3b) drop-shadow(0 0 25px #ff5722); }
+        }
+
+        /* Knife sits ABOVE the cake, blade pointing DOWN — ready to stab */
+        #knife {
+            position: absolute;
+            top: -70px;       /* above the cake */
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg); /* flip: blade faces down */
+            font-size: 3.8rem;
+            cursor: grab;
+            z-index: 50;
+            filter: drop-shadow(0 0 18px rgba(255,126,179,0.9));
+            transition: filter 0.2s;
+            user-select: none;
+            touch-action: none;
+            animation: knifeIdle 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes knifeIdle {
+            0%   { top: -70px; filter: drop-shadow(0 0 12px rgba(255,126,179,0.6)); }
+            100% { top: -55px; filter: drop-shadow(0 0 28px rgba(255,126,179,1)); }
+        }
+        #knife.slicing {
+            cursor: grabbing;
+            animation: none;
+            filter: drop-shadow(0 0 35px rgba(141,233,255,1)) drop-shadow(0 0 15px rgba(255,126,179,1));
+            transition: top 0.05s linear, filter 0.15s;
+        }
+
+        #cut-line {
+            position: absolute; top: 8px; bottom: 8px; left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--blue), var(--pink), var(--purple));
+            transform: translateX(-50%) scaleY(0);
+            transform-origin: top;
+            box-shadow: 0 0 14px var(--pink), 0 0 30px var(--blue), 0 0 6px #fff;
+            z-index: 20; opacity: 0; pointer-events: none;
+            border-radius: 4px;
+            transition: opacity 0.15s;
+        }
+
+        /* ═══════════════════════════════════════════
+           SURPRISE OVERLAY
+        ═══════════════════════════════════════════ */
+        #surprise-overlay {
+            position: fixed; inset: 0; z-index: 99999;
+            background: radial-gradient(ellipse at center, #1a0030 0%, #000 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.8s ease;
+        }
+        #surprise-overlay.show { opacity: 1; pointer-events: auto; }
+        #surprise-inner {
+            transform: scale(0);
+            transition: transform 2.8s cubic-bezier(0.175,0.885,0.32,1.275);
+            display: flex; flex-direction: column; align-items: center; position: relative;
+        }
+        #surprise-inner.grow { transform: scale(1); }
+        #surprise-overlay img.surprise-img {
+            width: auto; height: auto;
+            max-width: min(88vw, 500px); max-height: 65vh;
+            border-radius: 24px;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0 60px rgba(255,126,179,0.7), 0 0 120px rgba(194,159,253,0.4), 0 30px 60px rgba(0,0,0,0.7);
+        }
+        #surprise-label {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem; color: #ffb6d9;
+            text-shadow: 0 0 30px rgba(255,126,179,1), 0 0 60px rgba(255,126,179,0.5);
+            margin-top: 1.5rem;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
+
+        /* ═══════════════════════════════════════════
+           FINALE CANVAS
+        ═══════════════════════════════════════════ */
+        #finale-canvas {
+            position: fixed; inset: 0; z-index: 1;
+            opacity: 0; transition: opacity 1.5s ease;
+            pointer-events: none;
+        }
+
+        /* ═══════════════════════════════════════════
+           FINALE SLIDE (slide-5)
+        ═══════════════════════════════════════════ */
+        #slide-5 { z-index: 12; }
+
+        #final-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(4rem, 12vw, 8rem);
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ff7eb3, #c29ffd, #8de9ff, #ffb199);
+            background-size: 300% 300%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+            filter: drop-shadow(0 0 20px rgba(255,126,179,0.6));
+            opacity: 0; transform: translateY(30px) scale(0.9);
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.2,0.8,0.2,1);
+        }
+        #final-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #fff;
+            text-shadow: 0 0 25px rgba(194,159,253,0.9), 0 0 50px rgba(194,159,253,0.5);
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            margin-top: 0.5rem;
+        }
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #final-msg {
+            opacity: 0; transition: opacity 1.5s ease;
+            margin-top: 2rem; width: 100%; max-width: 36rem;
+        }
+        #final-msg .msg-glass {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 0 40px rgba(194,159,253,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem; line-height: 1.7;
+            font-family: 'Playfair Display', serif;
+            font-style: italic; text-align: center;
+        }
+
+        /* Luffy Container */
+        #luffy-container {
+            opacity: 0; transition: opacity 1.5s ease;
+            margin-top: 1.5rem;
+            display: flex; justify-content: center;
+        }
+        .luffy-frame {
+            position: relative;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,126,179,0.6);
+            border-radius: 20px;
+            padding: 8px; width: 140px; height: 140px;
+            box-shadow: 0 0 30px rgba(255,126,179,0.5), 0 0 60px rgba(194,159,253,0.25);
+            overflow: hidden;
+            animation: luffy-glow 2.5s infinite alternate;
+        }
+        @keyframes luffy-glow {
+            0%  { box-shadow: 0 0 20px rgba(255,126,179,0.5), 0 0 40px rgba(194,159,253,0.2); }
+            100%{ box-shadow: 0 0 40px rgba(255,126,179,0.9), 0 0 80px rgba(194,159,253,0.5); }
+        }
+        .luffy-frame img { width:100%; height:100%; object-fit:cover; border-radius:12px; }
+        .luffy-hat { position:absolute; top:-4px; left:-4px; font-size:1.8rem; }
+        .luffy-label {
+            position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);
+            font-family:'Great Vibes',cursive; font-size:1.3rem; color:var(--pink);
+            text-shadow: 0 0 10px var(--pink); white-space:nowrap;
+        }
+
+        /* ═══════════════════════════════════════════
+           POLAROID GALLERY
+        ═══════════════════════════════════════════ */
+        #photo-gallery {
+            position: fixed; inset: 0; z-index: 20;
+            pointer-events: none;
+            opacity: 0; transition: opacity 2s ease;
+        }
+
+        .polaroid {
+            position: absolute;
+            background: rgba(255,255,255,0.92);
+            padding: 10px 10px 34px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.4),
+                0 5px 12px rgba(255,126,179,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            pointer-events: auto; cursor: grab;
+            opacity: 0; transform-origin: center;
+            transition: box-shadow 0.3s ease, opacity 0.6s ease;
+        }
+        .polaroid:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 25px rgba(255,126,179,0.4), inset 0 1px 0 rgba(255,255,255,0.9);
+            z-index: 35 !important;
+        }
+        .polaroid:active { cursor: grabbing; }
+        .polaroid img {
+            width: 100%; height: calc(100% - 26px);
+            object-fit: cover; border-radius: 2px;
+            pointer-events: none; display: block;
+        }
+        .polaroid-caption {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.3rem; color: #5a1d5a;
+            text-align: center; margin-top: 6px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        /* Washi tapes */
+        .washi-tape {
+            position: absolute; top: -14px; left: 50%;
+            width: 72px; height: 20px; z-index: 10;
+            opacity: 0.88; mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .washi-pink   { background: #ffb6c1; background-image: linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px); background-size: 7px 7px; clip-path: polygon(2% 8%, 98% 2%, 99% 88%, 95% 98%, 0% 92%); transform: translateX(-50%) rotate(-4deg); }
+        .washi-blue   { background: #b0e0e6; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.3) 4px, transparent 4px, transparent 9px); clip-path: polygon(0% 12%, 100% 2%, 97% 95%, 3% 88%); transform: translateX(-50%) rotate(3deg); }
+        .washi-yellow { background: #ffe4b5; background-image: radial-gradient(rgba(255,105,180,0.4) 10%, transparent 10%); background-size: 6px 6px; clip-path: polygon(4% 0%, 96% 8%, 100% 92%, 1% 95%); transform: translateX(-50%) rotate(-2deg); }
+        .washi-purple { background: #dda0dd; background-image: radial-gradient(rgba(255,255,255,0.5) 15%, transparent 15%); background-size: 8px 8px; clip-path: polygon(1% 5%, 99% 10%, 95% 95%, 4% 90%); transform: translateX(-50%) rotate(5deg); }
+
+        /* Emoji stickers */
+        .polaroid-deco {
+            position: absolute; font-size: 1.3rem; z-index: 15;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+            pointer-events: none;
+        }
+        .deco-tr { top:-10px; right:-8px; transform:rotate(15deg); }
+        .deco-bl { bottom:6px; left:5px; transform:rotate(-10deg); }
+
+        /* Zoomed state */
+        .polaroid.zoomed {
+            position: fixed !important;
+            transform: translate(-50%, -50%) scale(1.65) rotate(0deg) !important;
+            top: 50% !important; left: 50% !important;
+            z-index: 10000 !important;
+            box-shadow: 0 0 80px rgba(255,126,179,0.6), 0 40px 80px rgba(0,0,0,0.6) !important;
+            cursor: default !important;
+        }
+        .polaroid.zoomed .washi-tape { opacity: 0; }
+
+        #gallery-overlay {
+            position: fixed; inset: 0; z-index: 9000;
+            background: rgba(10,0,20,0.75);
+            backdrop-filter: blur(12px);
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        #gallery-overlay.active { opacity: 1; pointer-events: auto; }
+
+        /* ═══════════════════════════════════════════
+           CURSOR TRAIL
+        ═══════════════════════════════════════════ */
+        .trail-el {
+            position: fixed; pointer-events: none; z-index: 9999;
+            animation: trailFloat 1.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+        }
+        @keyframes trailFloat {
+            0%   { opacity:1; transform:translateY(0) scale(0.5) rotate(0deg); }
+            50%  { transform:translateY(-45px) scale(1.3) rotate(45deg); }
+            100% { opacity:0; transform:translateY(-90px) scale(0.8) rotate(90deg); }
+        }
+
+        /* ═══════════════════════════════════════════
+           MOBILE OVERRIDES
+        ═══════════════════════════════════════════ */
+        @media (max-width: 767px) {
+            .glass-card { padding: 1.8rem 1.4rem; border-radius: 20px; }
+
+            #photo-gallery {
+                position: fixed !important; bottom: 12px !important;
+                top: auto !important; left: 0 !important; right: 0 !important;
+                height: 175px !important;
+                display: flex !important; flex-direction: row !important;
+                overflow-x: auto !important; overflow-y: hidden !important;
+                padding: 12px 18px !important; gap: 18px !important;
+                z-index: 95 !important; pointer-events: auto !important;
+                background: rgba(20,0,35,0.55);
+                backdrop-filter: blur(12px);
+                border-top: 1px solid rgba(255,255,255,0.12);
+                box-shadow: 0 -15px 35px rgba(255,126,179,0.12);
+                touch-action: pan-x !important;
+            }
+            .polaroid {
+                position: relative !important;
+                left: auto !important; top: auto !important;
+                transform: rotate(var(--mob-rot, 0deg)) !important;
+                flex-shrink: 0 !important;
+                width: 108px !important; height: 135px !important;
+                padding: 5px 5px 18px !important;
+                cursor: pointer !important;
+            }
+            .polaroid img { height: calc(100% - 15px) !important; }
+            .polaroid-caption { font-size: 0.9rem !important; margin-top: 3px !important; }
+            .washi-tape { width: 48px !important; height: 14px !important; top: -7px !important; }
+            .polaroid-deco { font-size: 0.95rem !important; }
+            .polaroid.zoomed {
+                width: 230px !important; height: 290px !important;
+                padding: 10px 10px 34px !important;
+                transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important;
+            }
+            #slide-5 { padding-bottom: 200px !important; }
+            #final-msg .msg-glass { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .luffy-frame { width:115px; height:115px; }
+        }
+
+        /* Label styles */
+        .label-sm { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; color: rgba(255,255,255,0.55); margin-bottom: 0.8rem; display: block; }
+        .error-txt { color: #ff6b9d; font-size: 0.85rem; min-height: 1.2rem; opacity: 0; transition: opacity 0.3s; font-weight: 600; margin-top: 0.4rem; text-align: center; }
+        .error-txt.show { opacity: 1; }
+        .text-muted { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+        .text-accent { color: var(--pink); font-weight: 700; }
+
+        /* Slide 3 status text */
+        .strikethrough { text-decoration: line-through; color: rgba(255,126,179,0.7); }
+        .big-welcome { font-size: clamp(1.4rem, 4vw, 2rem); color: #d9b8ff; font-weight: 700; text-shadow: 0 0 20px rgba(194,159,253,0.6); }
+
+        /* Page number dots */
+        .nav-dots {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 8px; z-index: 100; pointer-events: none;
+        }
+        .nav-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.4s ease;
+        }
+        .nav-dot.active { background: var(--pink); box-shadow: 0 0 10px var(--pink); width: 20px; border-radius: 3px; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Aurora background -->
+    <div class="aurora-bg">
+        <div class="aurora-blob ab1"></div>
+        <div class="aurora-blob ab2"></div>
+        <div class="aurora-blob ab3"></div>
+        <div class="aurora-blob ab4"></div>
+        <div class="aurora-blob ab5"></div>
+        <div class="neon-balloon bal1"></div>
+        <div class="neon-balloon bal2"></div>
+        <div class="neon-balloon bal3"></div>
+    </div>
+
+    <!-- Star field -->
+    <div class="stars-layer" id="stars-layer"></div>
+
+    <!-- ════════════════════════════════════
+         SLIDE 1 — Security Check
+    ════════════════════════════════════ -->
+    <div id="slide-1" class="slide active">
+        <div class="glass-card" style="text-align:center;">
+            <h2 class="font-serif glow-pink" style="font-size:clamp(1.6rem,5vw,2.2rem); margin-bottom:0.3rem;">Security Check 🎀</h2>
+            <p class="label-sm" style="margin-bottom:1.5rem;">Identity Verification</p>
+
+            <label class="label-sm" for="luffy-answer">Who is your favourite character?</label>
+            <input type="text" id="luffy-answer" placeholder="Type here..." class="neo-input" autocomplete="off" spellcheck="false">
+            <p id="luffy-error" class="error-txt">Nope! Think Pirates... 🏴‍☠️</p>
+
+            <button onclick="checkAnswer1()" class="neo-btn" style="width:100%; margin-top:1.2rem;">
+                Verify Me ✨
+            </button>
+
+            <div style="margin-top:1.2rem;">
+                <button onclick="toggleHint()" style="background:none;border:none;color:rgba(194,159,253,0.9);font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">
+                    Need a hint? 💡
+                </button>
+                <div id="hint-box">
+                    <img src="https://i.pinimg.com/736x/12/51/a7/1251a7dabac0be218def5c63964191cb.jpg" style="width:100%;height:auto;display:block;" alt="Hint">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SLIDE 2 — Straight or Lesbian?
+    ════════════════════════════════════ -->
+    <div id="slide-2" class="slide">
+        <div class="glass-card" style="text-align:center;">
+            <h2 class="font-serif glow-purple" style="font-size:clamp(1.5rem,4.5vw,2rem); margin-bottom:0.8rem;">Quick Question... 🌸</h2>
+            <p style="font-size:1.15rem; color:rgba(255,255,255,0.85); margin-bottom:2rem; font-family:'Playfair Display',serif; font-style:italic;">Are you straight or lesbian?</p>
+
+            <div style="position:relative; width:100%; height:160px; display:flex; align-items:center; justify-content:center;">
+                <button id="btn-straight" class="neo-btn neo-btn-outline" style="position:absolute; z-index:20; width:160px;">
+                    STRAIGHT 🏳️
+                </button>
+                <button onclick="nextSlide(3)" class="neo-btn" style="position:absolute; z-index:10; width:160px;">
+                    LESBIAN 🌈
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SLIDE 3 — Status Update
+    ════════════════════════════════════ -->
+    <div id="slide-3" class="slide">
+        <div class="glass-card" style="text-align:center;">
+            <div style="font-size:3.5rem; margin-bottom:1rem; filter:drop-shadow(0 0 15px rgba(255,126,179,0.8));">💅👑✨</div>
+            <h2 class="font-serif glow-pink" style="font-size:clamp(1.8rem,5vw,2.5rem); margin-bottom:1rem;">Status Update</h2>
+            <p style="font-size:1.05rem; color:rgba(255,255,255,0.8); line-height:1.8; margin-bottom:1.5rem;">
+                Teenage years: <span class="strikethrough">EXPIRED.</span> 💀<br>
+                <span class="big-welcome" style="display:block;margin-top:0.8rem;">Congratulations! 🎉</span>
+                <span style="display:block; margin-top:0.5rem; font-size:1.15rem; color:#ffb6d9; font-family:'Playfair Display',serif; font-style:italic; text-shadow: 0 0 15px rgba(255,126,179,0.6);">
+                    You are officially <strong style="color:#fff; text-shadow:0 0 20px rgba(255,126,179,1);">20</strong> years old.<br>
+                    Which means... congratulations, you are now legally an <strong style="color:#ffd700; text-shadow: 0 0 15px #ffd700;">AUNTY</strong>. 👵✨
+                </span>
+                <span style="display:block; margin-top:0.6rem; font-size:0.88rem; color:rgba(194,159,253,0.85); letter-spacing:0.02em;">
+                    Don't panic — it's the <em>glowing, main-character,</em><br>still-eats-maggi-at-midnight kind of aunty. 🍜👑
+                </span>
+            </p>
+            <button onclick="nextSlide(4)" class="neo-btn" style="width:100%;">
+                Accept Fate 😭
+            </button>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SLIDE 4 — Cake Cutting
+    ════════════════════════════════════ -->
+    <div id="slide-4" class="slide">
+        <div class="glass-card" style="text-align:center;">
+            <h2 class="font-serif glow-pink" id="cake-instruction" style="font-size:clamp(1.4rem,4vw,1.8rem); margin-bottom:0.4rem;">Cut your cake! 🌸</h2>
+            <p class="text-muted" style="margin-bottom:1rem; font-size:0.82rem;">(Drag the knife straight down through the middle)</p>
+
+            <div class="cake-container" id="cake-target">
+                <!-- LEFT HALF -->
+                <div class="cake-half cake-left">
+                    <svg viewBox="0 0 220 220" width="100%" height="100%">
+                        <!-- Cake base layers -->
+                        <ellipse cx="110" cy="175" rx="82" ry="18" fill="#cc6699" opacity="0.35"/>
+                        <path d="M28 165 L28 110 Q110 88 192 110 L192 165 Q110 185 28 165 Z" fill="#ffe4ef" stroke="#ffb6c1" stroke-width="2"/>
+                        <path d="M28 140 L28 120 Q110 99 192 120 L192 140 Q110 158 28 140 Z" fill="#ffb6c1"/>
+                        <path d="M28 110 Q110 88 192 110 L192 124 Q170 142 150 123 Q130 142 110 123 Q90 142 70 123 Q50 142 28 124 Z" fill="#fff8fc" stroke="#ffb6c1" stroke-width="1.5"/>
+                        <ellipse cx="110" cy="110" rx="82" ry="22" fill="#fff0f8" stroke="#ffb6c1" stroke-width="1.5"/>
+                        <!-- Decorative dots -->
+                        <circle cx="60" cy="130" r="4" fill="#ff99cc" opacity="0.8"/>
+                        <circle cx="85" cy="148" r="3" fill="#cc99ff" opacity="0.8"/>
+                        <circle cx="110" cy="155" r="4" fill="#ff99cc" opacity="0.8"/>
+                        <!-- Left candles -->
+                        <rect x="67" y="52" width="9" height="44" rx="4" fill="#ff99cc"/>
+                        <rect x="68" y="52" width="4" height="44" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M71.5 22 Q79 37 71.5 50 Q64 37 71.5 22 Z" fill="#ffeb3b" class="candle-flame"/>
+
+                        <rect x="104" y="42" width="9" height="50" rx="4" fill="#b399ff"/>
+                        <rect x="105" y="42" width="4" height="50" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M108.5 12 Q116 27 108.5 40 Q101 27 108.5 12 Z" fill="#ffeb3b" class="candle-flame"/>
+
+                        <rect x="141" y="52" width="9" height="44" rx="4" fill="#99ccff"/>
+                        <rect x="142" y="52" width="4" height="44" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M145.5 22 Q153 37 145.5 50 Q138 37 145.5 22 Z" fill="#ffeb3b" class="candle-flame"/>
+                    </svg>
+                </div>
+
+                <!-- RIGHT HALF -->
+                <div class="cake-half cake-right">
+                    <svg viewBox="0 0 220 220" width="100%" height="100%">
+                        <ellipse cx="110" cy="175" rx="82" ry="18" fill="#cc6699" opacity="0.35"/>
+                        <path d="M28 165 L28 110 Q110 88 192 110 L192 165 Q110 185 28 165 Z" fill="#ffe4ef" stroke="#ffb6c1" stroke-width="2"/>
+                        <path d="M28 140 L28 120 Q110 99 192 120 L192 140 Q110 158 28 140 Z" fill="#ffb6c1"/>
+                        <path d="M28 110 Q110 88 192 110 L192 124 Q170 142 150 123 Q130 142 110 123 Q90 142 70 123 Q50 142 28 124 Z" fill="#fff8fc" stroke="#ffb6c1" stroke-width="1.5"/>
+                        <ellipse cx="110" cy="110" rx="82" ry="22" fill="#fff0f8" stroke="#ffb6c1" stroke-width="1.5"/>
+                        <circle cx="135" cy="130" r="4" fill="#ff99cc" opacity="0.8"/>
+                        <circle cx="160" cy="148" r="3" fill="#cc99ff" opacity="0.8"/>
+                        <circle cx="110" cy="155" r="4" fill="#ff99cc" opacity="0.8"/>
+                        <rect x="67" y="52" width="9" height="44" rx="4" fill="#ff99cc"/>
+                        <rect x="68" y="52" width="4" height="44" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M71.5 22 Q79 37 71.5 50 Q64 37 71.5 22 Z" fill="#ffeb3b" class="candle-flame"/>
+                        <rect x="104" y="42" width="9" height="50" rx="4" fill="#b399ff"/>
+                        <rect x="105" y="42" width="4" height="50" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M108.5 12 Q116 27 108.5 40 Q101 27 108.5 12 Z" fill="#ffeb3b" class="candle-flame"/>
+                        <rect x="141" y="52" width="9" height="44" rx="4" fill="#99ccff"/>
+                        <rect x="142" y="52" width="4" height="44" rx="2" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M145.5 22 Q153 37 145.5 50 Q138 37 145.5 22 Z" fill="#ffeb3b" class="candle-flame"/>
+                    </svg>
+                </div>
+
+                <div id="cut-line"></div>
+                <!-- Knife starts above the cake, blade pointing down -->
+                <div id="knife">🔪</div>
+            </div>
+
+            <p id="cake-tip" class="text-muted" style="font-size:0.78rem; margin-top:0.3rem; animation: tipPulse 2s infinite ease-in-out;">
+                🔪 Drag the knife downward through the cake 🎂
+            </p>
+        </div>
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="finale-canvas"></canvas>
+
+    <!-- Surprise overlay -->
+    <div id="surprise-overlay">
+        <div id="surprise-inner">
+            <img class="surprise-img" src="https://i.pinimg.com/736x/9f/6f/20/9f6f20d0a83970abec6fdda7148902c5.jpg" alt="Surprise!">
+            <div id="surprise-label">For You! 💖</div>
+            <div style="position:absolute; top:-10px; left:-10px; font-size:2.5rem; animation:bounce 1s infinite;">💖</div>
+            <div style="position:absolute; top:-20px; right:5px; font-size:2.5rem; animation:bounce 1.2s 0.3s infinite;">✨</div>
+            <div style="position:absolute; bottom:50px; left:-15px; font-size:2.5rem; animation:bounce 1.4s 0.6s infinite;">🌸</div>
+            <div style="position:absolute; bottom:40px; right:-15px; font-size:2.5rem; animation:bounce 1.1s 0.2s infinite;">🎀</div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════
+         SLIDE 5 — Finale
+    ════════════════════════════════════ -->
+    <div id="slide-5" class="slide" style="gap:0.5rem; justify-content:center; align-items:center;">
+        <div id="final-title">Happy Birthday</div>
+        <div id="final-name">SENPAI! 🌸</div>
+
+        <div id="final-msg">
+            <div class="msg-glass">
+                You might be out of your teens now, but you are absolutely in your prime! 🌟<br>
+                May your 20s be overflowing with joy, magic, adventures, and everything you deserve. 💖
+            </div>
+        </div>
+
+        <div id="luffy-container">
+            <div style="position:relative; margin-top:1.5rem;">
+                <div class="luffy-frame">
+                    <img src="https://i.pinimg.com/originals/b4/6f/16/b46f16318097b7d1fde1498ca8a0ca53.gif" alt="Luffy Dancing">
+                    <div class="luffy-hat">👒</div>
+                </div>
+                <div class="luffy-label">Luffy approves! 🌊</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery overlay + gallery -->
+    <div id="gallery-overlay"></div>
+    <div id="photo-gallery"></div>
+
+    <!-- Nav dots -->
+    <div class="nav-dots" id="nav-dots">
+        <div class="nav-dot active" id="dot-1"></div>
+        <div class="nav-dot" id="dot-2"></div>
+        <div class="nav-dot" id="dot-3"></div>
+        <div class="nav-dot" id="dot-4"></div>
+        <div class="nav-dot" id="dot-5"></div>
+    </div>
+
+    <style>
+        @keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+        @keyframes tipPulse { 0%,100%{opacity:0.5;}50%{opacity:1;} }
+    </style>
+
+    <script>
+    // ══════════════════════════════════════════
+    // STARS
+    // ══════════════════════════════════════════
+    (function() {
+        const layer = document.getElementById('stars-layer');
+        for (let i = 0; i < 120; i++) {
+            const s = document.createElement('div');
+            s.className = 'star';
+            const size = Math.random() * 2.5 + 0.5;
+            s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${(Math.random()*3+1.5).toFixed(1)}s;--op:${(Math.random()*0.6+0.2).toFixed(2)};animation-delay:${(Math.random()*4).toFixed(1)}s;`;
+            layer.appendChild(s);
+        }
+    })();
+
+    // ══════════════════════════════════════════
+    // NAV DOTS
+    // ══════════════════════════════════════════
+    function updateDots(n) {
+        for (let i = 1; i <= 5; i++) {
+            const d = document.getElementById('dot-' + i);
+            if (d) d.classList.toggle('active', i === n);
+        }
+    }
+
+    // ══════════════════════════════════════════
+    // SLIDE SYSTEM
+    // ══════════════════════════════════════════
+    function nextSlide(n) {
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        document.getElementById('slide-' + n).classList.add('active');
+        updateDots(n);
+        document.getElementById('nav-dots').style.opacity = n === 5 ? '0' : '1';
+    }
+
+    // ══════════════════════════════════════════
+    // HINT
+    // ══════════════════════════════════════════
+    function toggleHint() {
+        const box = document.getElementById('hint-box');
+        if (box.style.display === 'none' || box.style.display === '') {
+            box.style.display = 'block';
+            requestAnimationFrame(() => box.classList.add('shown'));
+        } else {
+            box.classList.remove('shown');
+            setTimeout(() => box.style.display = 'none', 350);
+        }
+    }
+
+    // ══════════════════════════════════════════
+    // SLIDE 1 — Answer check
+    // ══════════════════════════════════════════
+    function checkAnswer1() {
+        const input = document.getElementById('luffy-answer');
+        const error = document.getElementById('luffy-error');
+        const val = input.value.trim().toLowerCase().replace(/[.\-_]/g, ' ').replace(/\s+/g,' ');
+        if (['luffy','monkey d luffy','monkey luffy','straw hat','strawhats','straw hat luffy'].some(k => val === k || val.includes(k))) {
+            error.classList.remove('show');
+            nextSlide(2);
+            setupRunawayButton();
+        } else {
+            input.classList.add('error-shake');
+            error.textContent = val === '' ? 'Please type something! 🌸' : 'Nope! Think Pirates... 🏴‍☠️';
+            error.classList.add('show');
+            setTimeout(() => input.classList.remove('error-shake'), 450);
+        }
+    }
+    document.getElementById('luffy-answer').addEventListener('keypress', e => {
+        if (e.key === 'Enter') checkAnswer1();
+    });
+
+    // ══════════════════════════════════════════
+    // SLIDE 2 — Runaway STRAIGHT button
+    // ══════════════════════════════════════════
+    let btnReady = false;
+    function setupRunawayButton() {
+        if (btnReady) return;
+        btnReady = true;
+        const btn = document.getElementById('btn-straight');
+        btn.style.transform = 'translate(-80px, -25px)';
+        const dodge = (e) => {
+            e.preventDefault();
+            const x = (Math.random() * 220) - 110;
+            const y = (Math.random() * 140) - 70;
+            btn.style.transform = `translate(${x}px, ${y}px) rotate(${(Math.random()-0.5)*20}deg) scale(0.9)`;
+            btn.style.transition = 'transform 0.2s cubic-bezier(0.34,1.56,0.64,1)';
+        };
+        btn.addEventListener('pointerover', dodge);
+        btn.addEventListener('touchstart', dodge, {passive:false});
+        btn.addEventListener('pointerdown', dodge);
+    }
+
+    // ══════════════════════════════════════════
+    // SLIDE 4 — Cake Slicing (real top→bottom cut)
+    // ══════════════════════════════════════════
+    const knife     = document.getElementById('knife');
+    const cakeEl    = document.getElementById('cake-target');
+    const cutLine   = document.getElementById('cut-line');
+    const cakeInstr = document.getElementById('cake-instruction');
+    const cakeTip   = document.getElementById('cake-tip');
+
+    let isDragging = false, cakeCut = false;
+    // Track the knife's current top position as % of cake height (0 = top, 1 = bottom)
+    let knifeProgress = 0; // 0..1
+    let lastPointerY = 0;
+    let dragStarted = false; // true once pointer moves downward over the cake
+
+    // The cake SVG area starts around y=0 of the container and the cut zone is 0–220px inside
+    const CAKE_CUT_START = 0;   // px from container top where blade enters
+    const CAKE_CUT_END   = 200; // px where blade is fully through
+
+    knife.addEventListener('pointerdown', e => {
+        if (cakeCut) return;
+        isDragging = true;
+        dragStarted = false;
+        knifeProgress = 0;
+        lastPointerY = e.clientY;
+        knife.classList.add('slicing');
+        cakeInstr.textContent = 'Push it down! 🔪';
+        cakeTip.style.opacity = '0';
+        // Show cut line immediately but at scale 0
+        cutLine.style.opacity = '1';
+        cutLine.style.transition = 'none';
+        cutLine.style.transform = 'translateX(-50%) scaleY(0)';
+        knife.setPointerCapture(e.pointerId);
+        e.preventDefault();
+    });
+
+    window.addEventListener('pointermove', e => {
+        if (!isDragging || cakeCut) return;
+        e.preventDefault();
+
+        const rect = cakeEl.getBoundingClientRect();
+        const lx = e.clientX - rect.left;
+        const ly = e.clientY - rect.top;
+        const dy = e.clientY - lastPointerY;
+        lastPointerY = e.clientY;
+
+        // Only advance if pointer is roughly over the center column of the cake
+        const inCenter = lx > 65 && lx < 155;
+
+        if (inCenter && dy > 0) {
+            // Advance knife downward proportionally to how much user dragged
+            knifeProgress = Math.min(1, knifeProgress + dy / (CAKE_CUT_END - CAKE_CUT_START));
+            dragStarted = true;
+        }
+
+        if (dragStarted) {
+            // Position knife: starts at top of cake (-70px) and pushes to bottom (+160px)
+            const knifeTopPx = -70 + knifeProgress * 230;
+            knife.style.top = knifeTopPx + 'px';
+            knife.style.left = '50%';
+            knife.style.transform = `translateX(-50%) rotate(180deg) scale(${1 + knifeProgress * 0.08})`;
+
+            // Grow the cut line from top as knife descends
+            cutLine.style.transform = `translateX(-50%) scaleY(${knifeProgress})`;
+
+            // Add a little screen shake at the moment of full cut
+            if (knifeProgress >= 1) {
+                triggerCakeCut();
+            }
+        } else {
+            // Before drag started: let knife loosely follow pointer X
+            const offX = Math.max(-40, Math.min(40, lx - 110));
+            knife.style.transform = `translateX(calc(-50% + ${offX}px)) rotate(180deg)`;
+        }
+    }, {passive: false});
+
+    window.addEventListener('pointerup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        knife.classList.remove('slicing');
+        if (!cakeCut) {
+            // Snap knife back to top with spring animation
+            knife.style.transition = 'top 0.5s cubic-bezier(0.34,1.56,0.64,1), transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+            knife.style.top = '-70px';
+            knife.style.transform = 'translateX(-50%) rotate(180deg)';
+            // Fade cut line back
+            cutLine.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
+            cutLine.style.transform = 'translateX(-50%) scaleY(0)';
+            cutLine.style.opacity = '0';
+            knifeProgress = 0;
+            cakeInstr.textContent = 'Drag the knife downward! 🔪';
+            cakeTip.style.opacity = '1';
+            // Re-enable idle bob
+            setTimeout(() => {
+                if (!cakeCut) {
+                    knife.style.transition = '';
+                    knife.style.animation = 'knifeIdle 2.5s ease-in-out infinite alternate';
+                }
+            }, 550);
+        }
+    });
+
+    function triggerCakeCut() {
+        cakeCut = true; isDragging = false;
+        cakeEl.classList.add('cake-cut');
+        // Knife exits downward and to the side, then fades
+        knife.classList.remove('slicing');
+        knife.style.transition = 'top 0.7s ease-in, opacity 0.5s 0.3s ease, transform 0.7s ease';
+        knife.style.top = '280px';
+        knife.style.transform = 'translateX(80px) rotate(160deg) scale(0.7)';
+        knife.style.opacity = '0';
+        cakeInstr.textContent = 'Yay! 🎉';
+        cakeTip.style.opacity = '0';
+
+        for (let i = 0; i < 50; i++) spawnCrumb();
+
+        // Trigger Surprise popup after 0.8s
+        setTimeout(() => {
+            const surp = document.getElementById('surprise-overlay');
+            surp.classList.add('show');
+            setTimeout(() => {
+                const inner = document.getElementById('surprise-inner');
+                inner.classList.add('grow');
+            }, 80);
+
+            // After 4s, fade out and go to finale
+            setTimeout(() => {
+                surp.style.transition = 'opacity 0.7s ease';
+                surp.style.opacity = '0';
+                setTimeout(() => {
+                    surp.style.display = 'none';
+                    startFinale();
+                }, 700);
+            }, 4200);
+        }, 900);
+    }
+
+    function spawnCrumb() {
+        const c = document.createElement('div');
+        c.style.position = 'absolute';
+        const sz = Math.random() * 9 + 3;
+        c.style.width = c.style.height = sz + 'px';
+        const cols = ['#ffb6c1','#ffffff','#ff99cc','#ffeb3b','#b399ff','#99ccff'];
+        c.style.background = cols[Math.floor(Math.random()*cols.length)];
+        c.style.borderRadius = Math.random() > 0.5 ? '50%' : '3px';
+        c.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+        c.style.top = '105px'; c.style.left = '105px'; c.style.zIndex = '30';
+        cakeEl.appendChild(c);
+        const angle = Math.random() * Math.PI * 2;
+        const force = Math.random() * 160 + 60;
+        c.animate([
+            { transform: 'translate(0,0) scale(1) rotate(0deg)', opacity: 1 },
+            { transform: `translate(${Math.cos(angle)*force}px, ${Math.sin(angle)*force + 80}px) scale(0) rotate(${Math.random()*360}deg)`, opacity: 0 }
+        ], { duration: 1400, easing: 'cubic-bezier(.25,.8,.25,1)' });
+        setTimeout(() => c.remove(), 1400);
+    }
+
+    // ══════════════════════════════════════════
+    // CONFETTI / PARTICLES
+    // ══════════════════════════════════════════
+    const canvas = document.getElementById('finale-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [], animRunning = false;
+
+    function resizeCanvas() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas); resizeCanvas();
+
+    class Confetti {
+        constructor(isHeart) {
+            this.isHeart = isHeart;
+            this.x = W / 2; this.y = H;
+            if (!isHeart) {
+                this.vx = (Math.random()-0.5)*28;
+                this.vy = (Math.random()-1)*40 - 5;
+                this.sz = Math.random()*10 + 5;
+                const cols = ['#ff7eb3','#ffb199','#c29ffd','#ffffff','#ffeb3b','#8de9ff'];
+                this.color = cols[Math.floor(Math.random()*cols.length)];
+                this.rot = Math.random()*360; this.rotSp = (Math.random()-0.5)*22;
+                this.grav = 0.55; this.fr = 0.965;
+            } else {
+                this.x = Math.random()*W; this.y = Math.random()*H + H/2;
+                this.vx = (Math.random()-0.5)*3;
+                this.vy = -(Math.random()*4+1);
+                this.sz = Math.random()*14+8;
+                const pinks = ['#ff7eb3','#ff4d85','#ffb6c1','#c29ffd'];
+                this.color = pinks[Math.floor(Math.random()*pinks.length)];
+                this.wobble = Math.random()*Math.PI*2;
+            }
+        }
+        update() {
+            if (!this.isHeart) {
+                this.vy += this.grav; this.vx *= this.fr; this.vy *= this.fr;
+                this.x += this.vx; this.y += this.vy; this.rot += this.rotSp;
+            } else {
+                this.wobble += 0.05;
+                this.x += this.vx + Math.sin(this.wobble)*2.5;
+                this.y += this.vy;
+                if (this.y < -50) this.y = H + 50;
+            }
+        }
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = 0.9;
+            if (!this.isHeart) {
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rot*Math.PI/180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.sz/2, -this.sz*0.25, this.sz, this.sz*0.5);
+            } else {
+                ctx.translate(this.x, this.y);
+                ctx.rotate(Math.sin(this.wobble)*0.2);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                const h = this.sz*0.3;
+                ctx.moveTo(0, h);
+                ctx.bezierCurveTo(0,0, -this.sz/2,0, -this.sz/2, h);
+                ctx.bezierCurveTo(-this.sz/2, this.sz*0.6, 0, this.sz*0.85, 0, this.sz);
+                ctx.bezierCurveTo(0, this.sz*0.85, this.sz/2, this.sz*0.6, this.sz/2, h);
+                ctx.bezierCurveTo(this.sz/2,0, 0,0, 0, h);
+                ctx.closePath(); ctx.fill();
+            }
+            ctx.restore();
+        }
+    }
+
+    function animLoop() {
+        if (!animRunning) return;
+        ctx.clearRect(0,0,W,H);
+        particles = particles.filter(p => {
+            p.update(); p.draw();
+            return p.isHeart || p.y < H + 30;
+        });
+        requestAnimationFrame(animLoop);
+    }
+
+    // ══════════════════════════════════════════
+    // PHOTO GALLERY
+    // ══════════════════════════════════════════
+    const photoFiles = [
+        "WhatsApp Image 2026-06-15 at 3.28.53 PM (1).jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.53 PM.jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.52 PM (2).jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.52 PM (1).jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.52 PM.jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.51 PM (1).jpeg",
+        "WhatsApp Image 2026-06-15 at 3.28.51 PM.jpeg"
+    ];
+
+    const captions = ["Cute Senpai 🌸","Stay Shining 🌟","Best Memories ✨","So Pretty! 🎀","Happy Birthday 🎉","Sweet Smile 👑","Lovely Day 💕"];
+    const tapeClasses = ['washi-pink','washi-blue','washi-yellow','washi-purple'];
+    const decoList = [
+        {emoji:'🎀',cls:'deco-tr'},{emoji:'💖',cls:'deco-tr'},{emoji:'✨',cls:'deco-bl'},
+        {emoji:'👑',cls:'deco-tr'},{emoji:'🌟',cls:'deco-tr'},{emoji:'🧁',cls:'deco-bl'},{emoji:'🐱',cls:'deco-tr'}
+    ];
+    const desktopSlots = [
+        {left:9,  top:20, rot:-9},
+        {left:14, top:52, rot:11},
+        {left:9,  top:82, rot:-6},
+        {left:91, top:20, rot:9 },
+        {left:85, top:50, rot:-11},
+        {left:91, top:80, rot:7 },
+        {left:50, top:88, rot:3 }
+    ];
+
+    let polaroids = [], zoomedEl = null, dragEl = null;
+    let mX = W/2, mY = H/2;
+    let isDragPol = false, dSX=0, dSY=0, dBL=0, dBT=0;
+
+    function makeDraggable(el) {
+        if (window.innerWidth < 768) return;
+        el.addEventListener('pointerdown', e => {
+            if (el.classList.contains('zoomed')) return;
+            dragEl = el; isDragPol = true;
+            dSX = e.clientX; dSY = e.clientY;
+            dBL = el.offsetLeft; dBT = el.offsetTop;
+            polaroids.forEach(p => { if (p !== el) p.style.zIndex = 20; });
+            el.style.zIndex = 40;
+            el.style.transition = 'none';
+            el.setPointerCapture(e.pointerId);
+            e.stopPropagation();
+        });
+        el.addEventListener('pointermove', e => {
+            if (!isDragPol || dragEl !== el) return;
+            const nl = dBL + (e.clientX - dSX);
+            const nt = dBT + (e.clientY - dSY);
+            el.style.left = (nl / W * 100) + '%';
+            el.style.top  = (nt / H * 100) + '%';
+            el.style.transform = `translate(-50%,-50%) rotate(${el.dataset.rot}deg)`;
+        });
+        el.addEventListener('pointerup', e => {
+            if (!isDragPol || dragEl !== el) return;
+            isDragPol = false; dragEl = null;
+            el.releasePointerCapture(e.pointerId);
+            el.style.transition = 'box-shadow 0.3s ease';
+            el.dataset.basex = parseFloat(el.style.left);
+            el.dataset.basey = parseFloat(el.style.top);
+        });
+    }
+
+    function initGallery() {
+        const gallery = document.getElementById('photo-gallery');
+        const overlay = document.getElementById('gallery-overlay');
+        const isMob = window.innerWidth < 768;
+
+        photoFiles.forEach((file, i) => {
+            const el = document.createElement('div');
+            el.className = 'polaroid';
+
+            // Washi tape
+            const tape = document.createElement('div');
+            tape.className = `washi-tape ${tapeClasses[i % tapeClasses.length]}`;
+            el.appendChild(tape);
+
+            // Sticker deco
+            const decoInfo = decoList[i % decoList.length];
+            const deco = document.createElement('div');
+            deco.className = `polaroid-deco ${decoInfo.cls}`;
+            deco.textContent = decoInfo.emoji;
+            el.appendChild(deco);
+
+            if (isMob) {
+                const rot = (i % 2 === 0 ? 3 : -3) + (Math.random()*2-1);
+                el.style.setProperty('--mob-rot', rot + 'deg');
+                el.dataset.rot = rot;
+            } else {
+                const slot = desktopSlots[i % desktopSlots.length];
+                const w = Math.random()*25 + 165;
+                el.style.left   = slot.left + '%';
+                el.style.top    = slot.top  + '%';
+                el.style.width  = w + 'px';
+                el.style.height = (w * 1.26) + 'px';
+                el.style.transform = `translate(-50%,-50%) rotate(${slot.rot}deg)`;
+                el.dataset.rot   = slot.rot;
+                el.dataset.basex = slot.left;
+                el.dataset.basey = slot.top;
+                el.dataset.parallax = (Math.random()*0.035 + 0.018).toFixed(3);
+            }
+
+            // Image
+            const img = document.createElement('img');
+            img.src = file;
+            img.onerror = () => { img.src = `https://placehold.co/400x500/1a0030/ff7eb3?text=💖+${i+1}`; };
+            el.appendChild(img);
+
+            // Caption
+            const cap = document.createElement('div');
+            cap.className = 'polaroid-caption';
+            cap.textContent = captions[i % captions.length];
+            el.appendChild(cap);
+
+            gallery.appendChild(el);
+            polaroids.push(el);
+            makeDraggable(el);
+
+            // Click to zoom
+            el.addEventListener('click', ev => {
+                ev.stopPropagation();
+                if (isDragPol) return;
+                if (zoomedEl === el) {
+                    el.classList.remove('zoomed');
+                    overlay.classList.remove('active');
+                    el.style.zIndex = 20;
+                    if (!isMob) el.style.transform = `translate(-50%,-50%) rotate(${el.dataset.rot}deg)`;
+                    else el.style.transform = `rotate(var(--mob-rot,0deg))`;
+                    zoomedEl = null;
+                } else {
+                    if (zoomedEl) {
+                        zoomedEl.classList.remove('zoomed');
+                        if (!isMob) zoomedEl.style.transform = `translate(-50%,-50%) rotate(${zoomedEl.dataset.rot}deg)`;
+                        else zoomedEl.style.transform = `rotate(var(--mob-rot,0deg))`;
+                    }
+                    el.classList.add('zoomed');
+                    overlay.classList.add('active');
+                    el.style.zIndex = 10001;
+                    zoomedEl = el;
+                }
+            });
+        });
+
+        overlay.addEventListener('click', () => {
+            if (!zoomedEl) return;
+            zoomedEl.classList.remove('zoomed');
+            zoomedEl.style.zIndex = 20;
+            const isMob = window.innerWidth < 768;
+            if (!isMob) zoomedEl.style.transform = `translate(-50%,-50%) rotate(${zoomedEl.dataset.rot}deg)`;
+            else zoomedEl.style.transform = `rotate(var(--mob-rot,0deg))`;
+            overlay.classList.remove('active');
+            zoomedEl = null;
+        });
+
+        // Mouse parallax
+        window.addEventListener('pointermove', e => {
+            mX = e.clientX; mY = e.clientY;
+            if (!zoomedEl) applyParallax();
+        });
+
+        // Auto-sway when idle
+        setInterval(() => {
+            if (!zoomedEl && !isDragPol) {
+                mX += Math.sin(Date.now()/900)*6;
+                mY += Math.cos(Date.now()/1100)*5;
+                applyParallax();
+            }
+        }, 50);
+    }
+
+    function applyParallax() {
+        if (window.innerWidth < 768) return;
+        const cx = W/2, cy = H/2;
+        const ox = mX - cx, oy = mY - cy;
+        polaroids.forEach(el => {
+            if (el === zoomedEl || el === dragEl) return;
+            const sp = parseFloat(el.dataset.parallax) || 0.03;
+            const rot = parseFloat(el.dataset.rot) || 0;
+            el.style.transform = `translate(calc(-50% + ${ox*sp}px), calc(-50% + ${oy*sp}px)) rotate(${rot + ox*sp*0.06}deg)`;
+        });
+    }
+
+    // ══════════════════════════════════════════
+    // FINALE
+    // ══════════════════════════════════════════
+    function startFinale() {
+        nextSlide(5);
+        canvas.style.opacity = '1';
+        animRunning = true;
+
+        // Hearts
+        for (let i=0; i<50; i++) particles.push(new Confetti(true));
+        // Confetti burst
+        for (let i=0; i<400; i++) particles.push(new Confetti(false));
+        animLoop();
+
+        // Text reveals
+        setTimeout(() => {
+            const t = document.getElementById('final-title');
+            t.style.opacity = '1'; t.style.transform = 'translateY(0) scale(1)';
+        }, 400);
+        setTimeout(() => {
+            const n = document.getElementById('final-name');
+            n.style.opacity = '1'; n.style.transform = 'translateY(0)';
+        }, 900);
+        setTimeout(() => { document.getElementById('final-msg').style.opacity = '1'; }, 1600);
+        setTimeout(() => { document.getElementById('luffy-container').style.opacity = '1'; }, 2100);
+
+        // Gallery
+        initGallery();
+        setTimeout(() => {
+            document.getElementById('photo-gallery').style.opacity = '1';
+            polaroids.forEach((el, i) => {
+                setTimeout(() => { el.style.opacity = '1'; }, i * 380);
+            });
+        }, 3200);
+    }
+
+    // ══════════════════════════════════════════
+    // CURSOR TRAIL
+    // ══════════════════════════════════════════
+    const TRAIL_EMOJIS = ['✨','💖','🌸','🎀','💕','⭐','🌟'];
+    window.addEventListener('pointermove', e => {
+        if (Math.random() > 0.52) {
+            const el = document.createElement('div');
+            el.className = 'trail-el';
+            el.textContent = TRAIL_EMOJIS[Math.floor(Math.random()*TRAIL_EMOJIS.length)];
+            el.style.left = (e.clientX + (Math.random()-0.5)*40 - 12) + 'px';
+            el.style.top  = (e.clientY + (Math.random()-0.5)*40 - 12) + 'px';
+            el.style.fontSize = (Math.random()*1+0.75) + 'rem';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1400);
+        }
+    });
+    </script>
+</body>
+</html>
