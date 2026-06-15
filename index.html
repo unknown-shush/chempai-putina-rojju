@@ -1243,8 +1243,19 @@
 
             // Image
             const img = document.createElement('img');
-            img.src = file;
-            img.onerror = () => { img.src = `https://placehold.co/400x500/1a0030/ff7eb3?text=💖+${i+1}`; };
+            // Construct absolute path dynamically to prevent relative resolution issues on GitHub Pages
+            const basePath = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+            img.src = window.location.origin + basePath + file;
+            
+            img.onerror = () => {
+                // If absolute path fails, try a direct relative path
+                if (img.src !== window.location.origin + file && img.src !== file) {
+                    img.src = file;
+                } else {
+                    // Safe placeholder without emojis in URL query to avoid potential browser/server blocking
+                    img.src = `https://placehold.co/400x500/1a0030/ff7eb3?text=Photo+${i+1}`;
+                }
+            };
             el.appendChild(img);
 
             // Caption
